@@ -2,6 +2,7 @@
   "name": "hfjp",
   "private": true,
   "scripts": {
+    "clean": "rimraf .turbo node_modules && turbo run clean",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
@@ -9,6 +10,7 @@
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
+    "rimraf": "6.1.0",
     "prettier": "3.6.2",
     "turbo": "2.6.0",
     "typescript": "5.9.3"

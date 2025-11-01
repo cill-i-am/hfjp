@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "clean": "rimraf dist .wrangler .turbo node_modules",
     "dev": "vite",
     "build": "vite build",
     "preview": "$npm_execpath run build && vite preview",
