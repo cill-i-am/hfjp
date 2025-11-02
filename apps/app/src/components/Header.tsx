@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router'
-
 import { useState } from 'react'
+import { Button } from '@hfjp/ui/button'
 import {
   ChevronDown,
   ChevronRight,
@@ -21,13 +21,15 @@ export default function Header() {
   return (
     <>
       <header className="p-4 flex items-center bg-gray-800 text-white shadow-lg">
-        <button
+        <Button
+          variant="ghost"
+          size="icon"
           onClick={() => setIsOpen(true)}
-          className="p-2 hover:bg-gray-700 rounded-lg transition-colors"
           aria-label="Open menu"
+          className="text-white hover:bg-white/10"
         >
           <Menu size={24} />
-        </button>
+        </Button>
         <h1 className="ml-4 text-xl font-semibold">
           <Link to="/">
             <img
@@ -46,13 +48,15 @@ export default function Header() {
       >
         <div className="flex items-center justify-between p-4 border-b border-gray-700">
           <h2 className="text-xl font-bold">Navigation</h2>
-          <button
+          <Button
+            variant="ghost"
+            size="icon"
             onClick={() => setIsOpen(false)}
-            className="p-2 hover:bg-gray-800 rounded-lg transition-colors"
             aria-label="Close menu"
+            className="text-white hover:bg-white/10"
           >
             <X size={24} />
-          </button>
+          </Button>
         </div>
 
         <nav className="flex-1 p-4 overflow-y-auto">
@@ -110,8 +114,10 @@ export default function Header() {
               <StickyNote size={20} />
               <span className="font-medium">Start - SSR Demos</span>
             </Link>
-            <button
-              className="p-2 hover:bg-gray-800 rounded-lg transition-colors"
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-white hover:bg-white/10"
               onClick={() =>
                 setGroupedExpanded((prev) => ({
                   ...prev,
@@ -124,7 +130,7 @@ export default function Header() {
               ) : (
                 <ChevronRight size={20} />
               )}
-            </button>
+            </Button>
           </div>
           {groupedExpanded.StartSSRDemo && (
             <div className="flex flex-col ml-4">

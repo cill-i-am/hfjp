@@ -1,0 +1,49 @@
+{
+  "name": "@hfjp/ui",
+  "version": "0.0.1",
+  "type": "module",
+  "private": false,
+  "sideEffects": [
+    "./styles.css"
+  ],
+  "scripts": {
+    "build": "tsdown --config tsdown.config.ts",
+    "dev": "tsdown --config tsdown.config.ts --watch"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3",
+    "class-variance-authority": "0.7.0",
+    "clsx": "2.1.1",
+    "tailwind-merge": "2.5.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "5.1.0",
+    "tailwindcss": "4.1.16",
+    "tsdown": "0.15.12",
+    "typescript": "5.9.3",
+    "vite": "7.1.12"
+  },
+  "files": [
+    "dist",
+    "styles.css",
+    "src"
+  ],
+  "exports": {
+    "./button": {
+      "types": "./dist/components/ui/button.d.ts",
+      "default": "./dist/components/ui/button.js"
+    },
+    "./utils": {
+      "types": "./dist/lib/utils.d.ts",
+      "default": "./dist/lib/utils.js"
+    },
+    "./styles.css": "./styles.css"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
