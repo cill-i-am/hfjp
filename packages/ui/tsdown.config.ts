@@ -1,17 +1,10 @@
 import { defineConfig } from "tsdown";
 
 export default defineConfig({
-  entry: [
-    "src/components/ui/button.tsx",
-    "src/lib/utils.ts"
-  ],
-  dts: true,
+  entry: ["./src/lib/utils.ts", "./src/components/ui/button.tsx"],
   format: ["esm"],
-  target: "esnext",
-  outDir: "dist",
+  dts: true,
   sourcemap: true,
   clean: true,
-  treeshake: true,
-  splitting: false,
-  unbundle: true
+  noExternal: ["clsx", "tailwind-merge"],
 });

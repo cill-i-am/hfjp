@@ -7,8 +7,9 @@
     "./styles.css"
   ],
   "scripts": {
-    "build": "tsdown --config tsdown.config.ts",
-    "dev": "tsdown --config tsdown.config.ts --watch"
+    "build": "tsdown",
+    "clean": "rimraf dist .turbo node_modules",
+    "dev": "tsdown --watch"
   },
   "peerDependencies": {
     "react": "^19.0.0",
@@ -21,6 +22,8 @@
     "tailwind-merge": "2.5.4"
   },
   "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "5.1.0",
     "tailwindcss": "4.1.16",
     "tsdown": "0.15.12",
@@ -34,10 +37,12 @@
   ],
   "exports": {
     "./button": {
+      "development": "./src/components/ui/button.tsx",
       "types": "./dist/components/ui/button.d.ts",
       "default": "./dist/components/ui/button.js"
     },
     "./utils": {
+      "development": "./src/lib/utils.ts",
       "types": "./dist/lib/utils.d.ts",
       "default": "./dist/lib/utils.js"
     },

@@ -1,22 +1,41 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
+    // Internal package - maximum strictness enabled
     "moduleResolution": "bundler",
-    "jsx": "react-jsx",
-    "strict": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "types": ["node"],
-    "lib": ["ESNext", "DOM"],
-    "baseUrl": ".",
+    "outDir": "./dist",
+
+    // Modern TypeScript for internal use
+    "target": "ES2022",
+    "module": "ESNext",
+
+    // TypeScript 5.8 - Enable type stripping for cleaner output
+    "erasableSyntaxOnly": true,
+
+    // Maximum strictness for internal packages
+    "exactOptionalPropertyTypes": false,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true,
+
+    // Additional strictness for internal code quality
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "alwaysStrict": true,
+    "useUnknownInCatchVariables": true,
+
+    // Clean output for internal consumption
+    "removeComments": false,
+    "emitDecoratorMetadata": false,
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "build", "dist"]
 }
