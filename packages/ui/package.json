@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsdown",
     "clean": "rimraf dist .turbo node_modules",
-    "dev": "tsdown --watch"
+    "dev": "tsdown --watch --ignore-watch dist --ignore-watch .turbo --ignore-watch node_modules --ignore-watch .cache"
   },
   "peerDependencies": {
     "react": "^19.0.0",
