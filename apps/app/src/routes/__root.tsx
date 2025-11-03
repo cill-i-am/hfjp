@@ -37,7 +37,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body style={{ fontFamily: 'var(--font-body)' }}>
         <Header />
         {children}
         <TanStackDevtools
