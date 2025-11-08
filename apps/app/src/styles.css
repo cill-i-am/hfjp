@@ -122,8 +122,6 @@
   }
   body {
     @apply m-0 bg-background text-foreground;
-  }
-  body.font-body {
     font-family: var(--font-body);
   }
   :where(h1, h2, h3, h4, h5, h6) {
